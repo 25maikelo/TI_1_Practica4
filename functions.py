@@ -76,7 +76,7 @@ def bm_2d(n_steps=1000, speed=5, s_pos=[0,0]):
   return BM_2d_df
 
 # Correlated Random Walk Trajectory
-def crw_2d(n_steps=1000, speed=5, s_pos=[0,0], exponent=1):
+def crw_2d(n_steps=1000, speed=5, s_pos=[0,0], exponent=0.6):
   """
   Arguments:
     n_steps:
@@ -114,7 +114,7 @@ def crw_2d(n_steps=1000, speed=5, s_pos=[0,0], exponent=1):
   return CRW_2d_df
 
 # Levy Flight Trajectory
-def LF_2d(n_steps=1000, speed=6, s_pos=[0,0], alpha=0.5, beta=1.0, loc=1.0, CRW_exponent=0.5):
+def lf_2d(n_steps=1000, speed=6, s_pos=[0,0], alpha=0.5, beta=1.0, loc=1.0, CRW_exponent=0.5):
   """
   Arguments:
     n_steps:

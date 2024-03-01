@@ -1,0 +1,7 @@
+# Archivos y directorios generados por Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Carpetas de configuración y almacenamiento local de VSCode
+.vscode/*
+__pycache__/
