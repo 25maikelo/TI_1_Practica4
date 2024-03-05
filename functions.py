@@ -160,11 +160,11 @@ def lf_2d(n_steps=1000, speed=6, s_pos=[0,0], alpha=0.5, beta=1.0, loc=1.0, CRW_
   return LF_2d_df
 
 # Define your function to compute path length for given trajectory
-def path_length(trajectory):
+def get_path_length(trajectory):
 
     distance_df = np.array([distance.euclidean(trajectory.iloc[i-1], trajectory.iloc[i]) for i in range(1, trajectory.shape[0])])
-    # path_length_df = np.cumsum(distance_df)
-    path_length_df = np.array([sum(distance_df[:i+1]) for i in range(len(distance_df))])
+    path_length = np.array([sum(distance_df[:i+1]) for i in range(len(distance_df))])
+    path_length_df = pd.DataFrame(path_length, columns=['data'])
     return path_length_df
 
 # Define your function to compute Mean Squared Displacement for given trajectory
@@ -183,7 +183,8 @@ def get_mean_squared_displacement(trajectory):
 
       msd_list.append(np.sum(squared_distances) / (N - n))
 
-    result = msd_list
+    msd_list_df = pd.DataFrame(msd_list, columns=['data'])
+    return msd_list_df
 
 
 # Define your function to compute Turning Angles for given trajectory
@@ -256,6 +257,5 @@ def get_step_lengths(trajectory):
 
       steps += 1
 
-    step_lengths_sliced = [value for value in step_lengths if value <= 50]
-    step_lengths_df = pd.DataFrame(step_lengths_sliced, columns=['steps'])
+    step_lengths_df = pd.DataFrame(step_lengths, columns=['steps'])
     return step_lengths_df
