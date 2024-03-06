@@ -11,7 +11,7 @@ fig_trajectory = go.Figure()
 # Panel items
 trajectory_type = pn.widgets.RadioButtonGroup(name='Botones', options=['BM', 'CRW', 'LF'])
 number_of_steps_input = pn.widgets.IntInput(name='Number of steps', start=1, end=10000, value=100, width=100)
-speed_input = pn.widgets.FloatInput(name='Speed', start=1, end=100, value=6, width=100)
+speed_input = pn.widgets.FloatInput(name='Speed', start=1, end=100, value=6, width=100, step=1)
 start_x_pos_input = pn.widgets.FloatInput(name='Start X pos', start=0, end=100, value=0, width=100)
 start_y_pos_input = pn.widgets.FloatInput(name='Start Y pos', start=0, end=100, value=0, width=100)
 
